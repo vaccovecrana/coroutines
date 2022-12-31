@@ -1,7 +1,10 @@
 /bin/
 /build/
+/gradlew*
+/gradle/
 /.gradle/
 /.vscode/
 /.settings/
 .classpath
 .project
+.idea
