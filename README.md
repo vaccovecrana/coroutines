@@ -1,7 +1,5 @@
 # Java Coroutines
 
-[![Build Status](https://www.travis-ci.org/esoco/coroutines.svg?branch=master)](https://www.travis-ci.org/esoco/coroutines)&nbsp;&nbsp;&nbsp;
-[![Download](https://api.bintray.com/packages/esoco/sdack/coroutines/images/download.svg)](https://bintray.com/esoco/sdack/coroutines/_latestVersion)&nbsp;&nbsp;&nbsp;
 [![Gitter chat](https://badges.gitter.im/esoco-coroutines/gitter.png)](https://gitter.im/esoco-coroutines/community)
 
 This project contains a pure Java implementation of coroutines.
