@@ -16,7 +16,9 @@ configure<JavaPluginExtension> {
 val api by configurations
 
 dependencies {
-  api("javax.validation:validation-api:2.0.1.Final")
-  testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
   testImplementation("junit:junit:4.13.2")
+}
+
+tasks.withType<Javadoc> {
+  isFailOnError = false
 }

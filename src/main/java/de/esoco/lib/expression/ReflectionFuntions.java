@@ -68,7 +68,7 @@ public class ReflectionFuntions
 			{
 				try
 				{
-					return rClass.newInstance();
+					return rClass.getConstructor().newInstance();
 				}
 				catch (Exception e)
 				{

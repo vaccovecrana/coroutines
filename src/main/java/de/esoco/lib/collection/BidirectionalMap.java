@@ -75,8 +75,8 @@ public class BidirectionalMap<K, V> implements Map<K, V>
 	{
 		try
 		{
-			aKeyToValueMap = rKeyToValueMapType.newInstance();
-			aValueToKeyMap = rValueToKeyMapType.newInstance();
+			aKeyToValueMap = rKeyToValueMapType.getConstructor().newInstance();
+			aValueToKeyMap = rValueToKeyMapType.getConstructor().newInstance();
 		}
 		catch (Exception e)
 		{

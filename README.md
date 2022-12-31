@@ -4,56 +4,18 @@
 [![Download](https://api.bintray.com/packages/esoco/sdack/coroutines/images/download.svg)](https://bintray.com/esoco/sdack/coroutines/_latestVersion)&nbsp;&nbsp;&nbsp;
 [![Gitter chat](https://badges.gitter.im/esoco-coroutines/gitter.png)](https://gitter.im/esoco-coroutines/community)
 
-This project contains a pure Java implementation of coroutines. I has a single dependency to the [ObjectRelations project](https://github.com/esoco/objectrelations). 
-
-It can be build locally after cloning by starting a gradle build with `gradlew build`. 
+This project contains a pure Java implementation of coroutines.
 
 ## Usage
+
 To include coroutines into a project, add the dependency to your project. 
 
-### Gradle
+https://mvnrepository.com/artifact/io.vacco.coroutines/coroutines
 
 ```gradle
 dependencies {
-	compile 'de.esoco:coroutines:0.9.1'
+  implementation("io.vacco.coroutines:coroutines:<LATEST_VERSION>")
 }
-```
-
-### Maven
-When using Maven it is necessary to define the JCenter repository. Furthermore, because of an incompatibility with Gradle wildcard versions it is currently necessary to explicitly declare the transitive dependencies of the project in Maven. This will be fixed in a future release. The pom.xml currently needs to contain the following entries:
-
-```xml
-<repositories>
-    <repository>
-        <id>jcenter</id>
-        <url>https://jcenter.bintray.com/</url>
-    </repository>
-</repositories>
-
-<properties>
-    <esoco.common.version>1.2.0</esoco.common.version>
-    <esoco.objectrelations.version>1.3.0</esoco.objectrelations.version>
-    <esoco.coroutines.version>0.9.1</esoco.coroutines.version>
-</properties>
-
-<dependencies>
-    <dependency>
-        <groupId>de.esoco</groupId>
-        <artifactId>coroutines</artifactId>
-        <version>${esoco.coroutines.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.obrel</groupId>
-        <artifactId>objectrelations</artifactId>
-        <version>${esoco.objectrelations.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>de.esoco</groupId>
-        <artifactId>esoco-common</artifactId>
-        <version>${esoco.common.version}</version>
-    </dependency>
-</dependencies>
-
 ```
 
 The following gives only a short overview of how to use this project. More detailed information can be found on our [documentation site](https://esoco.gitbook.io/sdack/coroutines/introduction) and in the [generated javadoc](https://esoco.github.io/coroutines/javadoc/).
@@ -123,7 +85,7 @@ The main package of this project is `de.esoco.coroutine`. It contains the core c
 * [Channel](https://esoco.github.io/coroutines/javadoc/de/esoco/coroutine/Channel.html): This class implements a queue that allow multiple coroutines to perform suspending communication by sending to and receiving from channels. 
 * [ChannelId](https://esoco.github.io/coroutines/javadoc/de/esoco/coroutine/ChannelId.html): An interface that is used for the identification of channels. 
 
-Furthermore the main package contains several exception classes that are used by the framework. All exceptions are unchecked and should therefore always be considered in an application's exception handling. 
+Furthermore, the main package contains several exception classes that are used by the framework. All exceptions are unchecked and should therefore always be considered in an application's exception handling. 
 
 The sub-package `step` contains several standard coroutine step implementations. All step classes provides factory methods that can be used for a fluent declaration of coroutines based on the methods  
 
@@ -136,9 +98,28 @@ The sub-package `step` contains several standard coroutine step implementations.
 * [Select](https://esoco.github.io/coroutines/javadoc/de/esoco/coroutine/step/Select.html) and [Collect](https://esoco.github.io/coroutines/javadoc/de/esoco/coroutine/step/Collect.html): Suspend the execution of a coroutine until one or all of a set of other coroutines have finished.
 * [ChannelSend](https://esoco.github.io/coroutines/javadoc/de/esoco/coroutine/step/ChannelSend.html) and [ChannelReceive](https://esoco.github.io/coroutines/javadoc/de/esoco/coroutine/step/ChannelReceive.html): These steps suspend the execution of a coroutine until sending to or receiving from a channel succeeded.
 
- Finally, the sub-package `step.nio` contains several step implementations that use the asynchronous APIs of the `java.nio` package to implement suspending I/O functionality. 
+Finally, the sub-package `step.nio` contains several step implementations that use the asynchronous APIs of the `java.nio` package to implement suspending I/O functionality. 
  
-The folder *src/examples* contains some examples for using coroutines. 
+The folder *src/test/examples* contains some examples for using coroutines. 
+
+# Building
+
+`gradle` version 7 or later must be available in your `PATH`.
+
+Create a file at `~/.gsOrgConfig.json` with the following contents:
+
+```json
+{
+  "orgId": "vacco",
+  "orgConfigUrl": "https://vacco-oss.s3.us-east-2.amazonaws.com/vacco-oss.json"
+}
+```
+
+Then:
+
+```
+$ gradle clean build
+```
 
 # License
 

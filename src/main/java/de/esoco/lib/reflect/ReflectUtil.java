@@ -1199,7 +1199,7 @@ public final class ReflectUtil
 	{
 		try
 		{
-			return rClass.newInstance();
+			return rClass.getConstructor().newInstance();
 		}
 		catch (Exception e)
 		{

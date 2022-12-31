@@ -260,7 +260,7 @@ public class SocketReceive extends AsynchronousSocketStep
 			{
 				String sData =
 					StandardCharsets.UTF_8.decode(
-						(ByteBuffer) rBuffer.duplicate().flip()).toString();
+						rBuffer.duplicate().flip()).toString();
 
 				int nLengthPos = sData.indexOf(CONTENT_LENGTH_HEADER);
 

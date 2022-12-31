@@ -1505,7 +1505,7 @@ public class CollectionUtil
 		try
 		{
 			@SuppressWarnings("unchecked")
-			Collection<O> aResult = rInput.getClass().newInstance();
+			Collection<O> aResult = rInput.getClass().getConstructor().newInstance();
 
 			for (I t : rInput)
 			{
